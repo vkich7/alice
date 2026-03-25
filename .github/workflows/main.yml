@@ -1,0 +1,54 @@
+name: 🧪 Перевірка HTML-сторінок
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Тестування HTML/CSS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout репозиторію
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 🔍 Знайти змінені сторінки
+        id: changed
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'pages/**' 2>/dev/null || echo "")
+          PAGES=$(echo "$CHANGED" | grep -oP 'pages/\K[^/]+' | sort -u | grep -v '^example$' | tr '\n' ',' | sed 's/,$//')
+          echo "Сторінки для тестування: $PAGES"
+          echo "pages=$PAGES" >> $GITHUB_OUTPUT
+
+      - name: 🐍 Встановити Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: 📦 Встановити залежності
+        run: pip install -r requirements.txt
+
+      - name: 🧪 Запустити тести
+        env:
+          CHANGED_PAGES: ${{ steps.changed.outputs.pages }}
+        run: |
+          cd tests
+          pytest . --tb=short -v \
+            --html=../test-report.html \
+            --self-contained-html
+
+      - name: 📊 Зберегти звіт тестів
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-report-${{ github.sha }}
+          path: test-report.html
+          retention-days: 30
