@@ -1,0 +1,85 @@
+/* Приклад оформлення — сторінка 1 */
+
+body {
+    font-family: 'Palatino Linotype', Palatino, serif;
+    background-color: #f5f0e8;
+    color: #1a1a2e;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+}
+
+header {
+    background: linear-gradient(135deg, #4a0e0e, #8b0000);
+    color: #f5e6d3;
+    padding: 40px;
+    text-align: center;
+    border-bottom: 4px solid #d4a853;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0 0 12px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    letter-spacing: 3px;
+}
+
+.book-title {
+    font-style: italic;
+    font-size: 1.05em;
+    margin: 0;
+    color: #f0d9b5;
+}
+
+main {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 0 30px;
+}
+
+main p {
+    font-size: 1.15em;
+    margin-bottom: 1.6em;
+    text-indent: 2em;
+    text-align: justify;
+}
+
+main p:first-of-type::first-letter {
+    font-size: 3em;
+    float: left;
+    line-height: 0.8;
+    margin-right: 8px;
+    color: #8b0000;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #e8ddd0;
+    border-top: 3px double #c8a96e;
+    padding: 25px 40px;
+    text-align: center;
+    color: #555;
+    font-size: 0.9em;
+    margin-top: 60px;
+}
+
+footer nav a {
+    color: #8b0000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid #8b0000;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+footer nav a:hover {
+    background-color: #8b0000;
+    color: white;
+}
+
+.author {
+    margin-top: 10px;
+    font-style: italic;
+    color: #777;
+}

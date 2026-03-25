@@ -1,0 +1,82 @@
+/* =============================================
+   ШАБЛОН CSS — Аліса в Задзеркаллі
+   Студент: [Ім'я Прізвище]
+   Сторінка: page_XX
+   ============================================= */
+
+/* --- Загальні стилі --- */
+body {
+    /* TODO: змініть шрифт на свій вибір */
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #fdf6e3;
+    color: #2c2c2c;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+/* --- Шапка --- */
+header {
+    background-color: #8b0000;
+    color: #fff;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+}
+
+.book-title {
+    font-style: italic;
+    font-size: 1em;
+    margin: 0;
+    opacity: 0.85;
+}
+
+/* --- Основний вміст --- */
+main {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main p {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+    text-indent: 1.5em;
+}
+
+/* --- Підвал --- */
+footer {
+    background-color: #e8e0d0;
+    border-top: 2px solid #c8b89a;
+    padding: 20px 40px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
+}
+
+footer nav {
+    margin-bottom: 10px;
+}
+
+footer nav a {
+    color: #8b0000;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+/* =============================================
+   TODO: Додайте сюди свої власні стилі!
+   Наприклад:
+   - змініть кольори
+   - додайте стилі для виділення тексту
+   - оформіть цитати
+   ============================================= */
